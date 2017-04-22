@@ -1,5 +1,7 @@
 package dominio;
-
+/**Clase Guerrero. La clase  Guerrero se encarga de crear un personaje con
+ * un nombre tipo 'Guerrero' con sus respectivas habilidades especiales(que son 3) 
+ */
 public class Guerrero extends Casta {
 
 	public Guerrero(double prob_crit, double evasion, double daÃ±o_crit) {
@@ -16,7 +18,10 @@ public class Guerrero extends Casta {
 		habilidadesCasta[1] = "Aumentar Defensa";
 		habilidadesCasta[2] = "Ignorar Defensa";
 	}
-
+	/**Método habilidad1.
+	 * @param caster es el personaje que será evaluado por la habilidad del Guerrero para ver si puede hacerse con un ataque doble 
+	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si es atacado con un ataque doble 
+	 */
 	// Ataque Doble
 	public boolean habilidad1(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
@@ -36,7 +41,10 @@ public class Guerrero extends Casta {
 		}
 		return false;
 	}
-
+	/**Método habilidad2.
+	 * @param caster es el personaje que será evaluado por la habilidad del Guerrero para ver si puede aumentar su defensa
+	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si se puede influir un aumento de su defensa 
+	 */
 	// Ignorar Defensa
 	public boolean habilidad3(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {

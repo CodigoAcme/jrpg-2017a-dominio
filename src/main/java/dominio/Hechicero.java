@@ -1,5 +1,7 @@
 package dominio;
-
+/**Clase Hechicero. La clase  Hechicero se encarga de crear un personaje con
+ * un nombre tipo 'Hechicero' con sus respectivas habilidades especiales(que son 3) 
+ */
 public class Hechicero extends Casta {
 
 	public Hechicero(double prob_crit, double evasion, double daÃ±o_crit) {
@@ -15,7 +17,10 @@ public class Hechicero extends Casta {
 		habilidadesCasta[1] = "Curar Aliado";
 		habilidadesCasta[2] = "Robar Energia y Salud";
 	}
-
+	/**Método habilidad1.
+	 * @param caster es el personaje que será evaluado por la habilidad del Guerrero para ver si puede hacerse con una bola de fuego 
+	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si es inflingido con una bola de fuego
+	 */
 	// Bola de Fuego
 	public boolean habilidad1(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
@@ -25,7 +30,10 @@ public class Hechicero extends Casta {
 		}
 		return false;
 	}
-
+	/**Método habilidad2
+	 * @param caster es el personaje que será evaluado por la habilidad del Hechicero para ver si puede curar a un alidado
+	 * @param aliado es el personaje que sera evaluado por la habilidad del Hechicero para ver si es posible ser curado por el Hechicero
+	 */
 	// Curar Aliado
 	public boolean habilidad2(Personaje caster, Peleable aliado) {
 		if (caster.getEnergia() > 10) {

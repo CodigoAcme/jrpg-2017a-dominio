@@ -1,5 +1,9 @@
 package dominio;
 
+/*
+ * Interfaz con todas las funciones y situaciones las cuales utilizan los personajes que pueden combatir
+ */
+
 public interface Peleable {
 	public int serAtacado(int daño);
 	public int getSalud();

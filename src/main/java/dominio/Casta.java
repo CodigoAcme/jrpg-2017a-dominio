@@ -2,6 +2,11 @@ package dominio;
 
 import java.io.Serializable;
 
+/*
+ * Clase abstracta que define que habilidades tendran, los valores de daño critico 
+ * y probabilidad de critico segun la vocacion de los personajes
+ */
+
 public abstract class Casta implements Serializable {
 	protected double probabilidadGolpeCritico;
 	protected double probabilidadEvitarDaÃ±o;

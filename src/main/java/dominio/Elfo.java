@@ -1,5 +1,7 @@
 package dominio;
-
+/**Clase Elfo. El objetivo de la clase es crear
+ * un personaje de raza Elfo con sus respectivas habilidades
+ */
 public class Elfo extends Personaje {
 
 	public Elfo(String nombre, Casta casta, int id) {
@@ -25,7 +27,9 @@ public class Elfo extends Personaje {
 		habilidadesRaza[0] = "Golpe Level";
 		habilidadesRaza[1] = "Ataque Bosque";
 	}
-
+	/**Método habilidadRaza1
+	 * @param atacado es el personaje que se utilizará con la habilidad especial de 'golpe level' del Elfo
+	 */
 	// Golpe Level
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
@@ -35,7 +39,9 @@ public class Elfo extends Personaje {
 		}
 		return false;
 	}
-
+	/**Método habilidadRaza2.
+	 * @param atacado es el personaje que se utilizará con la habilidad especial 'ataque bosque' del Elfo
+	 */
 	// Ataque Bosque
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {

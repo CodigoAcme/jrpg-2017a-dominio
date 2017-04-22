@@ -1,5 +1,10 @@
 package dominio;
 
+/*
+ * Esta clase define a los NPC(personajes controlados por el programa) del juego, seteando segun su nivel de 
+ * dificultad y nivel valores base a sus puntos de fuerza, salud y defensa
+ */
+
 public class NonPlayableCharacter implements Peleable {
 
 	private int salud;
@@ -85,14 +90,29 @@ public class NonPlayableCharacter implements Peleable {
 	public void setSalud(int salud) {
 		this.salud = salud;
 	}
+	
 
+	/*
+	 * Funcion que define como el NPC ataca
+	 * 15 de cada 100 ataques son criticos lo cual hace que su ataque reste un 50% mas de vida al rival de lo
+	 * que lo haria en caso de no ser critico el ataque
+	 *  @param atacado es el personaje elegido para que sea atacado en caso de que sea posible 
+	 */
 	public int atacar(Peleable atacado) {
 		if (MyRandom.nextDouble() <= 0.15) {// los NPC tienen 15% de golpes criticos
 			return atacado.serAtacado((int) (this.getAtaque() * 1.5));
 		} else
 			return atacado.serAtacado(this.getAtaque());
 	}
-
+	
+	/*
+	 * Funcion que determina como recibe los ataques el NPC
+	 * 15 de cada 100 ataques recibidos logra defenderlos con exito sin necesidad de usar sus puntos de defensa
+	 * En caso de que su probabilidad de defensa falle al daÒo recibido se le restan la mitad de los puntos
+	 * de defensa del NPC, si el daÒo resultante es menor a 0 el personaje logro defenderse con exito y por lo
+	 * tanto no pierde puntos de salud, en caso contrario se le resta el daÒo a la salud del NPC
+	 * @param daÒo es la cantidad de puntos de daÒo que el atacante envia
+	 */
 	public int serAtacado(int da√±o) {
 		if (MyRandom.nextDouble() >= 0.15) {
 			da√±o -= this.getDefensa() / 2;
