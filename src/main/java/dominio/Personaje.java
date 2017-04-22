@@ -2,6 +2,13 @@ package dominio;
 
 import java.io.Serializable;
 
+/*
+ * Clase que define los atributos que tienen en comun todas las clases de personajes, todo lo que los define
+ * ya sea posicion, alianza, estadisticas, nombre del personaje o de la raza, experiencia, nivel, etc.
+ * y sus funciones para manejar los ataques, salud, curaciones, aumentos de experiencia, etc.
+ * Estos personajes son manejados unicamente por jugadores
+ */
+
 public abstract class Personaje implements Peleable, Serializable {
 
 	protected int salud;
@@ -238,6 +245,16 @@ public abstract class Personaje implements Peleable, Serializable {
 		this.energiaTope = energiaTope;
 	}
 
+	
+	/*
+	 * Funcion que determina como ataca un personaje
+	 *  si el personaje tiene salud puede atacar
+	 *  si el personaje que quiere atacar tiene salud puede ser atacado
+	 *  en caso que se cumplan esas condiciones el personaje que recibe el ataque sera atacado con un valor
+	 *  que depende de que se cumplan las condiciones de golpe critico o no
+	 *  De no cumplirse la condicion de critico el ataque sera del mismo valor de ataque que posee el personaje 
+	 * @param atacado es el enemigo que recibira el ataque
+	 */
 	public int atacar(Peleable atacado) {
 		if (salud == 0)
 			return 0;
@@ -293,6 +310,14 @@ public abstract class Personaje implements Peleable, Serializable {
 		return salud > 0;
 	}
 
+	/*
+	 * Funcion para que el personaje interprete cuando es atacado
+	 * si el daño es menor a la cantidad de puntos de defensa o su defiende usando sus puntos de evitar
+	 * daño este personaje no recibirra daño, en caso contrario al daño se le resta los puntos de defensa
+	 * del personaje y el resultado se le resta a la salud, en caso de que la cantidad de daño supere a la
+	 * salud la salud es reducida a 0 y el daño es igual a la cantidad de salud del enemigo
+	 * @param daño es la cantidad de puntos de daños que el ataque le inflingio al personaje
+	 */
 	public int serAtacado(int daÃ±o) {
 		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaÃ±o()) {
 			daÃ±o -= this.defensa;
