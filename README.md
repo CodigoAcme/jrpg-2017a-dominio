@@ -16,8 +16,6 @@
 * Gutiérrez, Ruben ([rubennnn](https://github.com/rubennnn))
 * Iglesias, Pablo Ariel ([cerebroiglesias](https://github.com/cerebroiglesias))
 * Montenegro, Fernando ([fdmontenegro](https://github.com/fdmontenegro))
-* Completar ([xxxx](https://github.com/xxxx))
-* Completar ([xxxx](https://github.com/xxxx))
 
 ## Sobre la tecnología
 
