@@ -6,22 +6,28 @@ import java.util.LinkedList;
  */
 public class Alianza {
 
-	String nombre; df
+	String nombre;
 	LinkedList<Personaje> aliados;
 
 	public Alianza(String nombre) {
-		this.nombre = nombre;sad
+		this.nombre = nombre;
 		this.aliados = new LinkedList <Personaje>();
 	}
-
+	/**Método getAliados
+	 * Devuelve los aliados que forman parte de la alizana
+	 * */
 	public LinkedList<Personaje> getAliados() {
 		return aliados;
 	}
-
+	/**Método setAliados
+	 * @param aliados es la lista de aliados que formarán parte de la alianza
+	 **/
 	public void setAliados(LinkedList<Personaje> aliados) {
 		this.aliados = aliados;
 	}
-
+	/**M�todo obtenerNombre.
+	 *Retorna el nombre de nuestra alianza
+	 */
 	public String obtenerNombre(){
 		return nombre;
 	}
