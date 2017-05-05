@@ -4,8 +4,8 @@ package dominio;
  */
 public class Hechicero extends Casta {
 
-	public Hechicero(double prob_crit, double evasion, double daño_crit) {
-		super(prob_crit, evasion, daño_crit);
+	public Hechicero(double prob_crit, double evasion, double daÃ±o_crit) {
+		super(prob_crit, evasion, daÃ±o_crit);
 		this.nombreCasta = "Hechicero";
 	}
 
@@ -17,8 +17,8 @@ public class Hechicero extends Casta {
 		habilidadesCasta[1] = "Curar Aliado";
 		habilidadesCasta[2] = "Robar Energia y Salud";
 	}
-	/**M�todo habilidad1.
-	 * @param caster es el personaje que ser� evaluado por la habilidad del Guerrero para ver si puede hacerse con una bola de fuego 
+	/**Método habilidad1.
+	 * @param caster es el personaje que será evaluado por la habilidad del Guerrero para ver si puede hacerse con una bola de fuego 
 	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si es inflingido con una bola de fuego
 	 */
 	// Bola de Fuego
@@ -30,8 +30,8 @@ public class Hechicero extends Casta {
 		}
 		return false;
 	}
-	/**M�todo habilidad2
-	 * @param caster es el personaje que ser� evaluado por la habilidad del Hechicero para ver si puede curar a un alidado
+	/**Método habilidad2
+	 * @param caster es el personaje que será evaluado por la habilidad del Hechicero para ver si puede curar a un alidado
 	 * @param aliado es el personaje que sera evaluado por la habilidad del Hechicero para ver si es posible ser curado por el Hechicero
 	 */
 	// Curar Aliado
@@ -47,6 +47,10 @@ public class Hechicero extends Casta {
 	}
 
 	// Robar Energia y Salud
+	/**Método habilidad3
+	 * @param caster es el personaje que robará la energía y salud del personaje atacado
+	 * @param aliado es el personaje que sera evaluado por la habilidad del Hechicero para ver si el Hechicero puede robar su energía y salud 
+	 */
 	public boolean habilidad3(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
