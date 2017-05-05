@@ -4,8 +4,8 @@ package dominio;
  */
 public class Guerrero extends Casta {
 
-	public Guerrero(double prob_crit, double evasion, double daño_crit) {
-		super(prob_crit, evasion, daño_crit);
+	public Guerrero(double prob_crit, double evasion, double daÃ±o_crit) {
+		super(prob_crit, evasion, daÃ±o_crit);
 		this.nombreCasta = "Guerrero";
 	}
 
@@ -18,8 +18,8 @@ public class Guerrero extends Casta {
 		habilidadesCasta[1] = "Aumentar Defensa";
 		habilidadesCasta[2] = "Ignorar Defensa";
 	}
-	/**M�todo habilidad1.
-	 * @param caster es el personaje que ser� evaluado por la habilidad del Guerrero para ver si puede hacerse con un ataque doble 
+	/**Método habilidad1.
+	 * @param caster es el personaje que será evaluado por la habilidad del Guerrero para ver si puede hacerse con un ataque doble 
 	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si es atacado con un ataque doble 
 	 */
 	// Ataque Doble
@@ -33,6 +33,10 @@ public class Guerrero extends Casta {
 	}
 	
 	// Aumentar Defensa
+	/**Método habilidad2.
+	 * @param caster es el personaje que será evaluado por la habilidad del Guerrero para ver si puede aumentar su defensa
+	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si se puede influir un aumento de su defensa 
+	 */
 	public boolean habilidad2(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -41,11 +45,12 @@ public class Guerrero extends Casta {
 		}
 		return false;
 	}
-	/**M�todo habilidad2.
-	 * @param caster es el personaje que ser� evaluado por la habilidad del Guerrero para ver si puede aumentar su defensa
-	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si se puede influir un aumento de su defensa 
-	 */
+	
 	// Ignorar Defensa
+	/**Método habilidad.
+	 * @param caster es el personaje que será evaluado por la habilidad del Guerrero para ver si puede ignorar su defensa
+	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si se puede ignorar su defensa 
+	 */
 	public boolean habilidad3(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
