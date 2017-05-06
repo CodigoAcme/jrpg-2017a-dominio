@@ -22,7 +22,6 @@ public class Humano extends Personaje {
 		habilidadesRaza[1] = "Golpe Fatal";
 	}
 
-	// Incentivar
 	/**
 	 * Activa la habilidad llamada "Incentivar" la cual cuesta 10 de energia, en caso de no tener la suficiente 
 	 * energia la funcion devuelve "false", si tiene suficiente se la resta al personaje y al personaje
@@ -39,7 +38,6 @@ public class Humano extends Personaje {
 		return false;
 	}
 
-	// Golpe Fatal
 	/**
 	 * Activa la habilidad llamada "Golpe Fatal" se necesita minimo 10 puntos de energia, esta habilidad ataca 
 	 * al enemigo con un da�o igual a la mitad de los puntos de salud que este posea y le resta al jugador

@@ -21,7 +21,7 @@ public class Hechicero extends Casta {
 	 * @param caster es el personaje que será evaluado por la habilidad del Guerrero para ver si puede hacerse con una bola de fuego 
 	 * @param atacado es el personaje que sera evaluado por la habilidad del Guerrero para ver si es inflingido con una bola de fuego
 	 */
-	// Bola de Fuego
+	
 	public boolean habilidad1(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -34,7 +34,7 @@ public class Hechicero extends Casta {
 	 * @param caster es el personaje que será evaluado por la habilidad del Hechicero para ver si puede curar a un alidado
 	 * @param aliado es el personaje que sera evaluado por la habilidad del Hechicero para ver si es posible ser curado por el Hechicero
 	 */
-	// Curar Aliado
+
 	public boolean habilidad2(Personaje caster, Peleable aliado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -46,7 +46,7 @@ public class Hechicero extends Casta {
 		return false;
 	}
 
-	// Robar Energia y Salud
+	
 	/**Método habilidad3
 	 * @param caster es el personaje que robará la energía y salud del personaje atacado
 	 * @param aliado es el personaje que sera evaluado por la habilidad del Hechicero para ver si el Hechicero puede robar su energía y salud 

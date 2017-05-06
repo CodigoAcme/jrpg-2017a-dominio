@@ -1,6 +1,6 @@
 package dominio;
 
-/*
+/**
  * Interfaz con todas las funciones y situaciones las cuales utilizan los personajes que pueden combatir
  */
 

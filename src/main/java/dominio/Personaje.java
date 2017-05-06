@@ -13,8 +13,8 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 
 	protected int energia;
 
-	protected int ataque;// depende de la fuerza
-	protected int magia;// depende de la inteligencia
+	protected int ataque;
+	protected int magia;
 
 
 	protected String nombreRaza;

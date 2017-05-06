@@ -25,7 +25,7 @@ public class Elfo extends Personaje {
 	/**Metodo habilidadRaza1
 	 * @param atacado es el personaje que se utilizar� con la habilidad especial de 'golpe level' del Elfo
 	 */
-	// Golpe Level
+	
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);
@@ -37,7 +37,6 @@ public class Elfo extends Personaje {
 	/**M�todo habilidadRaza2.
 	 * @param atacado es el personaje que se utilizar� con la habilidad especial 'ataque bosque' del Elfo
 	 */
-	// Ataque Bosque
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);
