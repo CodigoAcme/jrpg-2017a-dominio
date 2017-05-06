@@ -9,21 +9,19 @@ import java.io.Serializable;
  * Estos personajes son manejados unicamente por jugadores
  */
 
-public abstract class Personaje implements Peleable, Serializable {
+public abstract class Personaje extends PersonAbs implements Peleable, Serializable {
 
-	protected int salud;
 	protected int energia;
-	protected int defensa;// depende de la destreza
+
 	protected int ataque;// depende de la fuerza
 	protected int magia;// depende de la inteligencia
 
-	protected String nombre;// hay que agregarlo a todos los constructores
+
 	protected String nombreRaza;
 
 	protected int saludTope;
 	protected int energiaTope;
 
-	protected int fuerza;
 	protected int destreza;
 	protected int inteligencia;
 	protected Casta casta;
@@ -32,7 +30,6 @@ public abstract class Personaje implements Peleable, Serializable {
 	protected int y;
 	
 	protected int experiencia;
-	protected int nivel;
 
 	protected int idPersonaje;
 
@@ -65,7 +62,7 @@ public abstract class Personaje implements Peleable, Serializable {
 	}
 
 	public Personaje(String nombre, Casta casta, int id) {
-		this.nombre = nombre;
+		super(nombre);
 		this.casta = casta;
 		this.idPersonaje = id;
 		experiencia = 0;
@@ -73,11 +70,12 @@ public abstract class Personaje implements Peleable, Serializable {
 		fuerza = 10;
 		inteligencia = 10;
 		destreza = 10;
-		if (casta instanceof Guerrero)
+	
+		if (casta.nombreCasta.equals("Guerrero"))
 			fuerza += 5;
-		if (casta instanceof Hechicero)
+		if (casta.nombreCasta.equals("Hechicero"))
 			inteligencia += 5;
-		if (casta instanceof Asesino)
+		if (casta.nombreCasta.equals("Asesino"))
 			destreza += 5;
 
 		x = 0;
@@ -95,7 +93,7 @@ public abstract class Personaje implements Peleable, Serializable {
 			int experiencia, int nivel,
 			int idPersonaje) {
 
-		this.nombre = nombre;
+		super(nombre);
 		this.salud = salud;
 		this.energia = energia;
 		this.fuerza = fuerza;
@@ -673,4 +671,35 @@ public abstract class Personaje implements Peleable, Serializable {
      * @return boolean.
      */
 	public abstract boolean habilidadRaza2(Peleable atacado);
+	
+	
+	protected void asignarHabilidadInicial(String nombre){
+		switch(nombreRaza){
+			case "elfo":
+		energiaTope += 10;
+			salud = saludTope;
+			energia = energiaTope;
+			habilidadesRaza = new String[2];
+			habilidadesRaza[0] = "Golpe Level";
+			habilidadesRaza[1] = "Ataque Bosque";
+			break;
+			case "orco":
+			saludTope += 10;
+			salud = saludTope;
+			energia = energiaTope;
+			habilidadesRaza = new String[2];
+			habilidadesRaza[0] = "Golpe Defensa";
+			habilidadesRaza[1] = "Mordisco de Vida";
+			break;
+			case "humano":
+			energiaTope += 5;
+			saludTope += 5;		
+			salud = saludTope;
+			energia = energiaTope;
+			break;
+
+			default: break;}
+
+
+}
 }

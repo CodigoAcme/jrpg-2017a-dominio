@@ -5,7 +5,7 @@ package dominio;
  * dificultad y nivel valores base a sus puntos de fuerza, salud y defensa
  */
 
-public class NonPlayableCharacter implements Peleable {
+public class NonPlayableCharacter extends PersonAbs implements Peleable {
 
 	private int salud;
 	private int fuerza;
@@ -15,7 +15,8 @@ public class NonPlayableCharacter implements Peleable {
 	private static final int dificultadAleatoria = -1;
 
 	public NonPlayableCharacter(String nombre, int nivel, int dificultadNPC) {
-		this.nombre = nombre;
+		
+		super(nombre);
 		this.nivel = nivel;
 		int dificultad;
 		if (dificultadNPC == dificultadAleatoria)
