@@ -7,16 +7,10 @@ package dominio;
 
 public class Orco extends Personaje {
 
-	public Orco(String nombre, Casta casta, int id) {
+	public Orco(String nombre, Casta casta , int id) {
 		super(nombre, casta, id);
-		saludTope += 10;
-		salud = saludTope;
-		energia = energiaTope;
 		nombreRaza = "Orco";
-
-		habilidadesRaza = new String[2];
-		habilidadesRaza[0] = "Golpe Defensa";
-		habilidadesRaza[1] = "Mordisco de Vida";
+		this.asignarHabilidadInicial("Orco");
 	}
 
 	public Orco(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,
@@ -48,8 +42,8 @@ public class Orco extends Personaje {
 	// Mordisco de Vida
 	/*
 	 * Esta habilidad cuesta 10 puntos de energia
-	 * El personaje atacado recibe un daño igual a los puntos de fuerza del orco atacante
-	 * La cantidad de daño realizado le es sumado a la vida del orco en caso de no superar el maximo de vida
+	 * El personaje atacado recibe un daï¿½o igual a los puntos de fuerza del orco atacante
+	 * La cantidad de daï¿½o realizado le es sumado a la vida del orco en caso de no superar el maximo de vida
 	 * de lo contrario simplemente su vida sera restablecida al maximo posible
 	 * @param atacado es el personaje que sera afectado por la habilidad en caso de que sea posible realizarla 
 	 */

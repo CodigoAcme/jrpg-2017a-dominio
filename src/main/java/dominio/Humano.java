@@ -5,14 +5,12 @@ package dominio;
  */
 public class Humano extends Personaje {
 
-	public Humano(String nombre, Casta casta, int id) {
-		super(nombre, casta, id);
-		saludTope += 5;
-		energiaTope += 5;
-		salud = saludTope;
-		energia = energiaTope;
-		nombreRaza = "Humano";
-	}
+		public Humano(String nombre, Casta casta, int id) {
+			super(nombre, casta, id);
+			nombreRaza = "Humano";
+			this.asignarHabilidadInicial("Humano");
+
+		}
 
 	public Humano(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,
 			int experiencia, int nivel, int idPersonaje) {

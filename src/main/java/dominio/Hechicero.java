@@ -38,7 +38,7 @@ public class Hechicero extends Casta {
 	public boolean habilidad2(Personaje caster, Peleable aliado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
-			if (aliado instanceof Personaje) {
+			if (aliado.estaVivo()) {
 				((Personaje) aliado).serCurado(caster.calcularPuntosDeMagia());
 				return true;
 			}
@@ -54,7 +54,7 @@ public class Hechicero extends Casta {
 	public boolean habilidad3(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
-			if (atacado instanceof Personaje) {
+			if (atacado.estaVivo()) {
 				int energia_robada = ((Personaje) atacado).serDesernegizado(caster.calcularPuntosDeMagia());
 				int salud_robada = ((Personaje) atacado).serRobadoSalud(caster.calcularPuntosDeMagia() / 2);
 				caster.serEnergizado(energia_robada);
@@ -65,4 +65,6 @@ public class Hechicero extends Casta {
 		}
 		return false;
 	}
+
+
 }

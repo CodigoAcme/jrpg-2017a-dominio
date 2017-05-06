@@ -21,7 +21,7 @@ public class Asesino extends Casta {
 	 * @param caster es el personaje que será evaluado por la habilidad del asesino para ver si puede hacerse con un golpe crítico 
 	 * @param atacado es el personaje que sera atacado por el asesino con un golpe crítico 
 	 */
-	// Golpe CrÃ­tico
+
 	public boolean habilidad1(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -34,7 +34,7 @@ public class Asesino extends Casta {
 	 * @param caster es el personaje que será evaluado por la habilidad del asesino para ver si puede hacerse con un aumento de evasion
 	 * @param atacado es el personaje que sera atacado por el asesino con un la habilidad de evasion 
 	 */
-	// Aumentar Evasion
+
 	public boolean habilidad2(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -47,7 +47,6 @@ public class Asesino extends Casta {
 		return false;
 	}
 
-	// Robar
 	/**Método habilidad3.
 	 * @param caster es el personaje que será evaluado por la habilidad del asesino para ver si puede robarlo
 	 * @param atacado es el personaje que sera atacado por el asesino con un la habilidad de robar 
@@ -55,4 +54,6 @@ public class Asesino extends Casta {
 	public boolean habilidad3(Personaje caster, Peleable atacado) {
 		return false;
 	}
+
+
 }
