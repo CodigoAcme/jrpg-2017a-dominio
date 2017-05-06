@@ -1,6 +1,6 @@
 package dominio;
 
-/*
+/**
  * Esta clase define a los NPC(personajes controlados por el programa) del juego, seteando segun su nivel de 
  * dificultad y nivel valores base a sus puntos de fuerza, salud y defensa
  */
@@ -42,57 +42,91 @@ public class NonPlayableCharacter implements Peleable {
 
 		}
 	}
-
+	/**
+	 * Incrementa los puntos de nivel
+	 * @return nivel * 30
+	 */
 	public int otorgarExp() {
 		return this.nivel * 30;
 	}
-
+	/**
+	 * Devuelve la fuerza personaje
+	 * @return fuerza
+	 */
 	public int getFuerza() {
 		return fuerza;
 	}
-
+	/**
+	 * Setea la fuerza del personaje
+	 * @param fuerza del personaje
+	 */
 	public void setFuerza(int fuerza) {
 		this.fuerza = fuerza;
 	}
-
+	/**
+	 * Devuelve el nombre de personaje
+	 * @return nombre
+	 */
 	public String getNombre() {
 		return nombre;
 	}
-
+	/**
+	 * Setea el nombre del personaje
+	 * @param nombre nombre del personaje
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	/**
+	 * Devuelve el nivel del personaje
+	 * @return nivel
+	 */
 	public int getNivel() {
 		return nivel;
 	}
-
+	/**
+	 * Setea el nivel del personaje
+	 * @param nivel nivel del personaje
+	 */
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
-
+	/**
+	 * @return false/true si esta vivo o no
+	 */
 	public boolean estaVivo() {
 		return salud > 0;
 	}
-
+	/**
+	 * Devuelve la defensa de un personaje
+	 * @return defensa 
+	 */
 	public int getDefensa() {
 		return defensa;
 	}
-
+	/**Setea la defensa de un personaje
+	 * @param defensa defensa de un personaje
+	 */
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
-
+	/**
+	 * Devuelve la salud de un personaje 
+	 * @return salud
+	 */
 	public int getSalud() {
 		return salud;
 	}
-
+	/**
+	 * Setea la salud de un personaje
+	 * @param salud salu de un personaje
+	 */
 	public void setSalud(int salud) {
 		this.salud = salud;
 	}
 	
 
-	/*
+	/**
 	 * Funcion que define como el NPC ataca
 	 * 15 de cada 100 ataques son criticos lo cual hace que su ataque reste un 50% mas de vida al rival de lo
 	 * que lo haria en caso de no ser critico el ataque
@@ -105,13 +139,13 @@ public class NonPlayableCharacter implements Peleable {
 			return atacado.serAtacado(this.getAtaque());
 	}
 	
-	/*
+	/**
 	 * Funcion que determina como recibe los ataques el NPC
 	 * 15 de cada 100 ataques recibidos logra defenderlos con exito sin necesidad de usar sus puntos de defensa
-	 * En caso de que su probabilidad de defensa falle al daño recibido se le restan la mitad de los puntos
-	 * de defensa del NPC, si el daño resultante es menor a 0 el personaje logro defenderse con exito y por lo
-	 * tanto no pierde puntos de salud, en caso contrario se le resta el daño a la salud del NPC
-	 * @param daño es la cantidad de puntos de daño que el atacante envia
+	 * En caso de que su probabilidad de defensa falle al daï¿½o recibido se le restan la mitad de los puntos
+	 * de defensa del NPC, si el daï¿½o resultante es menor a 0 el personaje logro defenderse con exito y por lo
+	 * tanto no pierde puntos de salud, en caso contrario se le resta el daï¿½o a la salud del NPC
+	 * @param daï¿½o es la cantidad de puntos de daï¿½o que el atacante envia
 	 */
 	public int serAtacado(int daÃ±o) {
 		if (MyRandom.nextDouble() >= 0.15) {
@@ -124,9 +158,15 @@ public class NonPlayableCharacter implements Peleable {
 		}
 		return 0;// esquivo el golpe
 	}
-
+	
+	/**
+	 * Implementada en Intefaz
+	 */
 	public void despuesDeTurno() { }
-
+	/**
+	 * 
+	 * @param exp implementada en interfaz
+	 */
 	public void ganarExperiencia(int exp) {
 
 	}
@@ -136,6 +176,7 @@ public class NonPlayableCharacter implements Peleable {
 		return fuerza;
 	}
 
+   
 	@Override
 	public void setAtaque(int ataque) {
 		this.fuerza = ataque;
