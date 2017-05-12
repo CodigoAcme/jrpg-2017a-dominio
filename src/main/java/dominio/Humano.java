@@ -54,4 +54,17 @@ public class Humano extends Personaje {
 		this.setEnergia(this.getEnergia() - 10);
 		return false;
 	}
+	
+	@Override
+	public boolean serAtacado() {
+		return true;
+	}
+
+	@Override
+	public boolean puedeSerCurado() {
+		return true;
+	}
+	
+	
+	
 }

@@ -182,4 +182,19 @@ public class NonPlayableCharacter extends PersonAbs implements Peleable {
 	public void setAtaque(int ataque) {
 		this.fuerza = ataque;
 	}
+	
+	/**
+	 * Metodo que devuelve si el personaje puede ser atacado o no
+	 */
+	@Override
+	public boolean serAtacado() {
+		return false;
+	}
+	/**
+	 * Metodo que devuelve si el personaje puede ser curado o no
+	 */
+	@Override
+	public boolean puedeSerCurado() {
+		return false;
+	}
 }

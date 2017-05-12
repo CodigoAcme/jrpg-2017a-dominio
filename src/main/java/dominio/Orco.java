@@ -58,4 +58,19 @@ public class Orco extends Personaje {
 		}
 		return false;
 	}
+	
+	/**
+	 * Metodo que devuelve si el personaje puede ser atacado o no
+	 */
+	@Override
+	public boolean serAtacado() {
+		return true;
+	}
+	/**
+	 * Metodo que devuelve si el personaje puede ser curado o no
+	 */
+	@Override
+	public boolean puedeSerCurado() {
+		return true;
+	}
 }

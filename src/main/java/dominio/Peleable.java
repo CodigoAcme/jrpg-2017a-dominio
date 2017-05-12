@@ -14,4 +14,6 @@ public interface Peleable {
 	public void setAtaque(int ataque);
 	public boolean estaVivo();
 	public String getNombre();
+	public boolean serAtacado();
+	public boolean puedeSerCurado();
 }

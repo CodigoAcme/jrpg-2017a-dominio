@@ -54,6 +54,28 @@ public class Asesino extends Casta {
 	public boolean habilidad3(Personaje caster, Peleable atacado) {
 		return false;
 	}
+	
+	/**
+	 * Devuelve la fuerza dependiendo de la raza
+	 */
+	@Override
+	public int getFueraza() {
+		return 0;
+	}
+	/**
+	 * Devuelve la inteligencia dependiendo de la raza
+	 */
+	@Override
+	public int getInteligencia() {
+		return 0;
+	}
+	/**
+	 * devuelve la Destreza dependiendo de la raza
+	 */
+	@Override
+	public int getDestreza() {
+		return 5;
+	}
 
 
 }

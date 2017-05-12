@@ -38,4 +38,16 @@ public class TestOrco {
 			Assert.assertTrue(h.getSalud() == 100);
 		}
 	}
+	
+	@Test
+	public void puedeSerCurado() {
+		Orco o = new Orco("Hernan", new Guerrero(), 1);
+		Assert.assertTrue(o.puedeSerCurado());
+	}
+	
+	@Test
+	public void puedeSerAtacado() {
+		Orco o = new Orco("Hernan", new Guerrero(), 1);
+		Assert.assertTrue(o.serAtacado());
+	}
 }

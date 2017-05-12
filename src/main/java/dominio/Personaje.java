@@ -70,13 +70,12 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 		fuerza = 10;
 		inteligencia = 10;
 		destreza = 10;
-	
-		if (casta.nombreCasta.equals("Guerrero"))
-			fuerza += 5;
-		if (casta.nombreCasta.equals("Hechicero"))
-			inteligencia += 5;
-		if (casta.nombreCasta.equals("Asesino"))
-			destreza += 5;
+
+		fuerza += casta.getFueraza();
+		
+		inteligencia += casta.getInteligencia();
+		
+		destreza += casta.getDestreza();
 
 		x = 0;
 		y = 0;
@@ -675,7 +674,7 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 	
 	protected void asignarHabilidadInicial(String nombre){
 		switch(nombreRaza){
-			case "elfo":
+			case "Elfo":
 		energiaTope += 10;
 			salud = saludTope;
 			energia = energiaTope;
@@ -683,7 +682,7 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 			habilidadesRaza[0] = "Golpe Level";
 			habilidadesRaza[1] = "Ataque Bosque";
 			break;
-			case "orco":
+			case "Orco":
 			saludTope += 10;
 			salud = saludTope;
 			energia = energiaTope;
@@ -691,7 +690,7 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 			habilidadesRaza[0] = "Golpe Defensa";
 			habilidadesRaza[1] = "Mordisco de Vida";
 			break;
-			case "humano":
+			case "Humano":
 			energiaTope += 5;
 			saludTope += 5;		
 			salud = saludTope;

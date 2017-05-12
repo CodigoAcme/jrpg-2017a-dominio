@@ -38,7 +38,7 @@ public class Hechicero extends Casta {
 	public boolean habilidad2(Personaje caster, Peleable aliado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
-			if (aliado.estaVivo()) {
+			if (aliado.puedeSerCurado()) {
 				((Personaje) aliado).serCurado(caster.calcularPuntosDeMagia());
 				return true;
 			}
@@ -54,7 +54,7 @@ public class Hechicero extends Casta {
 	public boolean habilidad3(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
-			if (atacado.estaVivo()) {
+			if (atacado.serAtacado()) {
 				int energia_robada = ((Personaje) atacado).serDesernegizado(caster.calcularPuntosDeMagia());
 				int salud_robada = ((Personaje) atacado).serRobadoSalud(caster.calcularPuntosDeMagia() / 2);
 				caster.serEnergizado(energia_robada);
@@ -66,5 +66,26 @@ public class Hechicero extends Casta {
 		return false;
 	}
 
-
+	
+	/**
+	 * Devuelve la fuerza dependiendo de la raza
+	 */
+	@Override
+	public int getFueraza() {
+		return 0;
+	}
+	/**
+	 * Devuelve la inteligencia dependiendo de la raza
+	 */
+	@Override
+	public int getInteligencia() {
+		return 5;
+	}
+	/**
+	 * devuelve la destreza dependiendo de la raza
+	 */
+	@Override
+	public int getDestreza() {
+		return 0;
+	}
 }

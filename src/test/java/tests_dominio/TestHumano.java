@@ -35,4 +35,16 @@ public class TestHumano {
 			Assert.assertTrue(e.getSalud() == 100);
 		}
 	}
+	
+	@Test
+	public void puedeSerCurado() {
+		Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);	
+		Assert.assertTrue(h.puedeSerCurado());
+	}
+	
+	@Test
+	public void puedeSerAtacado() {
+		Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);	
+		Assert.assertTrue(h.serAtacado());
+	}
 }

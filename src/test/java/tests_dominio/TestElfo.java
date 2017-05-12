@@ -32,4 +32,16 @@ public class TestElfo {
 		else
 			Assert.assertTrue(h.getSalud() == 100);
 	}
+	
+	@Test
+	public void puedeSerCurado() {
+		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+		Assert.assertTrue(e.puedeSerCurado());
+	}
+	
+	@Test
+	public void puedeSerAtacado() {
+		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+		Assert.assertTrue(e.serAtacado());
+	}
 }

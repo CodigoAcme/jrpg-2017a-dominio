@@ -27,21 +27,21 @@ public abstract class Casta implements Serializable {
 		this.dañoCritico = daño_crit;
 	}
 	/**
-     * Funcion abstarcta que serán definidas en cada especialización de Casta.
+     * Funcion abstracta que serán definidas en cada especialización de Casta.
      * @param caster caster.
      * @param atacado caster.
      * @return true o false.
      */
 	public abstract boolean habilidad1(Personaje caster, Peleable atacado);
 	/**
-     * Funcion abstarcta que serán definidas en cada especialización de Casta.
+     * Funcion abstracta que serán definidas en cada especialización de Casta.
      * @param caster caster.
      * @param atacado caster.
      * @return true o false.
      */
 	public abstract boolean habilidad2(Personaje caster, Peleable atacado);
 	/**
-     * Funcion abstarcta que serán definidas en cada especialización de Casta.
+     * Funcion abstracta que serán definidas en cada especialización de Casta.
      * @param caster caster.
      * @param atacado caster.
      * @return true o false.
@@ -104,5 +104,10 @@ public abstract class Casta implements Serializable {
 		this.dañoCritico = dañoCritico;
 	}
 
+	public abstract int getFueraza();
+
+	public abstract int getDestreza();
+
+	public abstract int getInteligencia();
 
 }
