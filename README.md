@@ -1,4 +1,4 @@
-https://travis-ci.org/CodigoAcme/jrpg-2017a-dominio.svg?branch=master
+[![Build Status](https://travis-ci.org/CodigoAcme/jrpg-2017a-dominio.svg?branch=master)](https://travis-ci.org/CodigoAcme/jrpg-2017a-dominio)
 # World Of Middle Earth (WOME) - dominio
 
 ## Sobre las personas
