@@ -7,6 +7,7 @@ import dominio.Asesino;
 import dominio.Guerrero;
 import dominio.Hechicero;
 import dominio.Humano;
+import dominio.MyRandomStub;
 import dominio.Orco;
 
 public class TestOrco {
@@ -16,6 +17,9 @@ public class TestOrco {
 		Humano h = new Humano("Nicolas", new Guerrero(), 1);
 		Orco o = new Orco("Hernan", new Guerrero(), 1);
 
+		h.setRandomGenerator(new MyRandomStub());
+		o.setRandomGenerator(new MyRandomStub());
+		
 		Assert.assertTrue(h.getSalud() == 105);
 		if (o.habilidadRaza1(h))
 			Assert.assertTrue(h.getSalud() == 95);
@@ -28,6 +32,9 @@ public class TestOrco {
 		Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
 		Orco o = new Orco("Nico", 100, 100, 80, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
 
+		h.setRandomGenerator(new MyRandomStub());
+		o.setRandomGenerator(new MyRandomStub());
+		
 		Assert.assertTrue(h.getSalud() == 100);
 		o.setSalud(100);
 		if (o.habilidadRaza2(h)) {

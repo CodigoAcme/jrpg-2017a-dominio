@@ -7,6 +7,7 @@ import dominio.Asesino;
 import dominio.Elfo;
 import dominio.Guerrero;
 import dominio.Humano;
+import dominio.MyRandomStub;
 
 public class TestGuerrero {
 
@@ -14,7 +15,10 @@ public class TestGuerrero {
 	public void testDobleGolpe() {
 		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-
+		
+		h.setRandomGenerator(new MyRandomStub());
+		e.setRandomGenerator(new MyRandomStub());
+		
 		Assert.assertTrue(e.getSalud() == 100);
 		if (h.habilidadCasta1(e))
 			Assert.assertTrue(e.getSalud() < 100);
@@ -37,6 +41,9 @@ public class TestGuerrero {
 		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
+		h.setRandomGenerator(new MyRandomStub());
+		e.setRandomGenerator(new MyRandomStub());
+		
 		Assert.assertTrue(e.getSalud() == 100);
 		if (h.habilidadCasta3(e))
 			Assert.assertTrue(e.getSalud() < 100);

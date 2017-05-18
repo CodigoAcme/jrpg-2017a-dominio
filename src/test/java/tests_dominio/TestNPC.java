@@ -9,7 +9,12 @@ public class TestNPC {
 
 	@Test
 	public void testOtorgarExp() {
-		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, -1);
-		Assert.assertTrue(30 == npc.otorgarExp());
+		
+		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, 2);
+		Assert.assertEquals(30,npc.otorgarExp());
+		Assert.assertEquals("Gigante", npc.getNombre());
+		Assert.assertEquals(false,npc.puedeSerCurado());
+		Assert.assertEquals(false,npc.serAtacado());
 	}
+		
 }

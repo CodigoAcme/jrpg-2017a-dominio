@@ -21,6 +21,10 @@ public class TestAliarCombatir {
 	public void testDañar(){
 		Humano h = new Humano("Nicolas",new Guerrero(),1);
 		Humano h2 = new Humano("Lautaro",new Asesino(),1);
+		
+		h.setRandomGenerator(new MyRandomStub());
+		h2.setRandomGenerator(new MyRandomStub());
+		
 		System.out.println(h2.getSalud());
 		Assert.assertTrue(h2.getSalud()==105);
 		if(	h.atacar(h2)!=0)

@@ -7,6 +7,7 @@ import dominio.Asesino;
 import dominio.Elfo;
 import dominio.Hechicero;
 import dominio.Humano;
+import dominio.MyRandomStub;
 
 public class TestHechicero {
 
@@ -27,6 +28,9 @@ public class TestHechicero {
 		Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
+		h.setRandomGenerator(new MyRandomStub());
+		e.setRandomGenerator(new MyRandomStub());
+		
 		Assert.assertTrue(e.getSalud() == 100);
 		if (h.habilidadCasta1(e))
 			Assert.assertTrue(e.getSalud() < 100);

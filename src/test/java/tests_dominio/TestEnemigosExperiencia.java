@@ -12,6 +12,10 @@ public class TestEnemigosExperiencia {
 
 		Humano h = new Humano("Nicolas", new Guerrero(), 1);
 		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, 0);
+		
+		h.setRandomGenerator(new MyRandomStub());
+		npc.setRandomGenerator(new MyRandomStub());
+		
 		Personaje.cargarTablaNivel();
 		Assert.assertTrue(h.getExperiencia() == 0);
 		while (npc.estaVivo())
@@ -32,6 +36,10 @@ public class TestEnemigosExperiencia {
 	public void testPjvsPj() {
 		Humano h = new Humano("Nicolas", new Guerrero(), 1);
 		Humano h2 = new Humano("Lautaro", new Guerrero(), 2);
+		
+		h.setRandomGenerator(new MyRandomStub());
+		h2.setRandomGenerator(new MyRandomStub());
+		
 		Personaje.cargarTablaNivel();
 		Assert.assertTrue(h.getExperiencia() == 0);
 		Assert.assertTrue(h2.getExperiencia() == 0);

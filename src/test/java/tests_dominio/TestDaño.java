@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import dominio.Guerrero;
 import dominio.Humano;
+import dominio.MyRandomStub;
 import dominio.Orco;
 
 public class TestDaño {
@@ -14,6 +15,9 @@ public class TestDaño {
 		Humano h = new Humano("Nico", 100, 100, 100, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
 		Orco o = new Orco("Nico", 100, 100, 15, 0, 30, new Guerrero(0.2, 0, 1.5), 0, 1, 1);
 
+		h.setRandomGenerator(new MyRandomStub());
+		o.setRandomGenerator(new MyRandomStub());
+		
 		Assert.assertTrue(o.getSalud() == 100);
 		if (h.atacar(o) != 0) {
 			Assert.assertTrue(o.getSalud() == 0);
@@ -29,13 +33,20 @@ public class TestDaño {
 	public void testLosMuertosNoAtacan() {
 		Humano h = new Humano("Nico", 100, 100, 25, 0, 30, new Guerrero(0.2, 0, 1.5), 0, 1, 1);
 		Orco o = new Orco("Nico", 100, 100, 15, 0, 30, new Guerrero(0.2, 0, 1.5), 0, 1, 1);
-
+		
+		h.setRandomGenerator(new MyRandomStub());
+		o.setRandomGenerator(new MyRandomStub());
+		
 		h.atacar(o);
 		h.atacar(o);
 		h.atacar(o);
 		h.atacar(o);
+		 
 
 		o.atacar(h);
+		
+		
+		
 		Assert.assertEquals(100, h.getSalud());
 	}
 }
