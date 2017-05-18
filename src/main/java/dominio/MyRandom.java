@@ -1,16 +1,18 @@
 package dominio;
 
+import java.util.Random;
 
-public class MyRandom {
-	
-	
+public class MyRandom extends RandomGenerator{
 
-	public static double nextDouble() {
-		return 0.49;
+	@Override
+	public double nextDouble() {
+		return new Random().nextDouble();
 	}
-	
-	public static int nextInt(int val) {
-		return val - 1;
+
+	@Override
+	public  int nextInt(final int val) {
+		return new Random().nextInt(val);
+
 	}
-	
+
 }

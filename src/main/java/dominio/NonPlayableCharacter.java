@@ -7,11 +7,7 @@ package dominio;
 
 public class NonPlayableCharacter extends PersonAbs implements Peleable {
 
-	private int salud;
-	private int fuerza;
-	private int defensa;
-	private String nombre;
-	private int nivel;
+
 	private static final int dificultadAleatoria = -1;
 
 	public NonPlayableCharacter(String nombre, int nivel, int dificultadNPC) {
@@ -20,7 +16,7 @@ public class NonPlayableCharacter extends PersonAbs implements Peleable {
 		this.nivel = nivel;
 		int dificultad;
 		if (dificultadNPC == dificultadAleatoria)
-			dificultad = MyRandom.nextInt(3);
+			dificultad = this.myRandom.nextInt(3);
 		else
 			dificultad = dificultadNPC;
 
@@ -134,7 +130,7 @@ public class NonPlayableCharacter extends PersonAbs implements Peleable {
 	 *  @param atacado es el personaje elegido para que sea atacado en caso de que sea posible 
 	 */
 	public int atacar(Peleable atacado) {
-		if (MyRandom.nextDouble() <= 0.15) {// los NPC tienen 15% de golpes criticos
+		if (myRandom.nextDouble() <= 0.15) {// los NPC tienen 15% de golpes criticos
 			return atacado.serAtacado((int) (this.getAtaque() * 1.5));
 		} else
 			return atacado.serAtacado(this.getAtaque());
@@ -149,7 +145,7 @@ public class NonPlayableCharacter extends PersonAbs implements Peleable {
 	 * @param da�o es la cantidad de puntos de da�o que el atacante envia
 	 */
 	public int serAtacado(int daño) {
-		if (MyRandom.nextDouble() >= 0.15) {
+		if (myRandom.nextDouble() >= 0.15) {
 			daño -= this.getDefensa() / 2;
 			if (daño > 0) {
 				salud -= daño;

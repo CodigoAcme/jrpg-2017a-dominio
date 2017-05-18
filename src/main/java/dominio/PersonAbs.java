@@ -6,9 +6,19 @@ public abstract class PersonAbs {
 	protected int fuerza;
 	protected int nivel;
 	protected int defensa;
-	
-	public PersonAbs(String nombre ) {
+
+	protected RandomGenerator myRandom;
+
+	public PersonAbs(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public void setRandomGenerator(MyRandomStub myRandomStub) {
+		this.myRandom = myRandomStub;
+	}
+
+	public RandomGenerator getMyRandom() {
+		return this.myRandom;
 	}
 
 }

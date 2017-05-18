@@ -366,7 +366,7 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 		if (salud == 0)
 			return 0;
 		if (atacado.getSalud() > 0) {
-			if (MyRandom.nextDouble() <= this.casta.getProbabilidadGolpeCritico() + this.destreza / 1000) {
+			if (this.myRandom.nextDouble() <= this.casta.getProbabilidadGolpeCritico() + this.destreza / 1000) {
 				return atacado.serAtacado(this.golpe_critico());
 			} else {
 				return atacado.serAtacado(this.ataque);
@@ -457,7 +457,7 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 	 * @param da�o es la cantidad de puntos de da�os que el ataque le inflingio al personaje
 	 */
 	public int serAtacado(int daño) {
-		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
+		if (myRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
 			daño -= this.defensa;
 			if (daño > 0) {
 				if (salud <= daño) {
