@@ -17,13 +17,7 @@ public class Alianza {
 	 * Devuelve los aliados que forman parte de la alizana
 	 * */
 	public LinkedList<Personaje> getAliados() {
-		return aliados;
-	}
-	/**Método setAliados
-	 * @param aliados es la lista de aliados que formarán parte de la alianza
-	 **/
-	public void setAliados(LinkedList<Personaje> aliados) {
-		this.aliados = aliados;
+		return this.copiaDeLista(aliados);
 	}
 	/**M�todo obtenerNombre.
 	 *Retorna el nombre de nuestra alianza
@@ -42,5 +36,18 @@ public class Alianza {
 	 */
 	public void añadirPersonaje(Personaje pj){
 		aliados.add(pj);
+	}
+	/**
+	 * Metodo para copiar la lista de personajes aliados
+	 * @param lista
+	 * @return copia de lista
+	 */
+	private LinkedList<Personaje> copiaDeLista(LinkedList<Personaje> lista){
+		LinkedList<Personaje> listaAux = new LinkedList<>();
+		
+		for(int i = 0; i < lista.size(); i ++)
+			listaAux.add(lista.get(i));
+		
+		return listaAux;
 	}
 }
