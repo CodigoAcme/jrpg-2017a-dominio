@@ -33,7 +33,7 @@ public class TestHumano {
 		Assert.assertTrue(e.getSalud() == 100);
 		if (h.habilidadRaza2(e)) {
 			Assert.assertTrue(e.getSalud() == 70);
-			Assert.assertTrue(h.getEnergia() == 50);
+			Assert.assertEquals(h.getEnergia(),50,0);
 		} else {
 			Assert.assertTrue(h.getEnergia() == 90);
 			Assert.assertTrue(e.getSalud() == 100);

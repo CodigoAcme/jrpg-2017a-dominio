@@ -32,7 +32,7 @@ public class Orco extends Personaje {
 	 */
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
-			this.setEnergia(this.getEnergia() - 10);
+			this.modificarEnergia(-10);
 			if (atacado.serAtacado(this.getDefensa() * 2) > 0)
 				return true;
 		}
@@ -49,7 +49,7 @@ public class Orco extends Personaje {
 	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
-			this.setEnergia(this.getEnergia() - 10);
+			this.modificarEnergia(-10);
 			int daño_causado = atacado.serAtacado(this.getFuerza());
 			if (daño_causado > 0) {
 				this.serCurado(daño_causado);

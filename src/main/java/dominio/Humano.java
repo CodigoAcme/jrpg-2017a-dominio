@@ -31,7 +31,7 @@ public class Humano extends Personaje {
 	 */
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
-			this.setEnergia(this.getEnergia() - 10);
+			this.modificarEnergia(-10);
 			atacado.setAtaque(atacado.getAtaque() + this.getMagia());
 			return true;
 		}
@@ -47,11 +47,11 @@ public class Humano extends Personaje {
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			if (atacado.serAtacado(atacado.getSalud() / 2) > 0) {
-				this.setEnergia(this.getEnergia() / 2);
+				this.modificarEnergia(-(this.getEnergia() / 2));
 				return true;
 			}
 		}
-		this.setEnergia(this.getEnergia() - 10);
+		this.modificarEnergia(-10);
 		return false;
 	}
 	

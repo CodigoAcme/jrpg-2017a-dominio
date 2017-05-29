@@ -36,6 +36,6 @@ public class TestAsesino {
 		h.habilidadCasta2(null);
 		Assert.assertEquals(0.45, h.getCasta().getProbabilidadEvitarDaño(), 0.01);
 		h.habilidadCasta2(null);
-		Assert.assertTrue(0.5==h.getCasta().getProbabilidadEvitarDaño());
+		Assert.assertEquals(0.5, h.getCasta().getProbabilidadEvitarDaño(), 0.1);
 	}
 }

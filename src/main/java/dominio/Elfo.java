@@ -28,7 +28,7 @@ public class Elfo extends Personaje {
 	
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
-			this.setEnergia(this.getEnergia() - 10);
+			this.modificarEnergia(-10);
 			if (atacado.serAtacado(this.getFuerza() + this.getNivel() * 10) > 0)
 				return true;
 		}
@@ -39,7 +39,7 @@ public class Elfo extends Personaje {
 	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
-			this.setEnergia(this.getEnergia() - 10);
+			this.modificarEnergia(-10);
 			if (atacado.serAtacado((int) (this.magia)) > 0)
 				return true;
 		}

@@ -6,8 +6,8 @@ import java.util.LinkedList;
  */
 public class Alianza {
 
-	String nombre;
-	LinkedList<Personaje> aliados;
+	private String nombre;
+	private LinkedList<Personaje> aliados;
 
 	public Alianza(String nombre) {
 		this.nombre = nombre;
@@ -17,7 +17,8 @@ public class Alianza {
 	 * Devuelve los aliados que forman parte de la alizana
 	 * */
 	public LinkedList<Personaje> getAliados() {
-		return this.copiaDeLista(aliados);
+	return this.copiaDeLista(aliados);
+//	return (LinkedList<Personaje>) aliados.clone();
 	}
 	/**M�todo obtenerNombre.
 	 *Retorna el nombre de nuestra alianza
@@ -49,5 +50,6 @@ public class Alianza {
 			listaAux.add(lista.get(i));
 		
 		return listaAux;
+
 	}
 }

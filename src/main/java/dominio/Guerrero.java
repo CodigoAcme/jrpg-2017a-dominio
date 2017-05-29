@@ -27,7 +27,7 @@ public class Guerrero extends Casta {
 	
 	public boolean habilidad1(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
-			caster.setEnergia(caster.getEnergia() - 10);
+			caster.modificarEnergia(10);
 			if (atacado.serAtacado(caster.ataque * 2) > 0)
 				return true;
 		}
@@ -41,8 +41,8 @@ public class Guerrero extends Casta {
 	 */
 	public boolean habilidad2(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
-			caster.setEnergia(caster.getEnergia() - 10);
-			caster.setDefensa(caster.getDefensa() + caster.magia);
+			caster.modificarEnergia(-10);
+			caster.modificarDefenza(caster.magia);
 			return true;
 		}
 		return false;
@@ -55,12 +55,12 @@ public class Guerrero extends Casta {
 	 */
 	public boolean habilidad3(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
-			caster.setEnergia(caster.getEnergia() - 10);
+			caster.modificarEnergia(-10);
 			if (atacado.estaVivo()) {
 				int defensa_original = ((Personaje) atacado).getDefensa();
-				((Personaje) atacado).setDefensa(0);
+				((Personaje) atacado).modificarDefenza(0);
 				if (atacado.serAtacado(caster.ataque) > 0) {
-					((Personaje) atacado).setDefensa(defensa_original);
+					((Personaje) atacado).modificarDefenza(defensa_original);
 					return true;
 				}
 			}
