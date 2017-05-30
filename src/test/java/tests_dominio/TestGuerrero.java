@@ -16,8 +16,8 @@ public class TestGuerrero {
 		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 		
-		h.setRandomGenerator(new MyRandomStub());
-		e.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		e.setRandomGenerator(new MyRandomStub(0.49));
 		
 		Assert.assertTrue(e.getSalud() == 100);
 		if (h.habilidadCasta1(e))
@@ -41,8 +41,8 @@ public class TestGuerrero {
 		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
-		h.setRandomGenerator(new MyRandomStub());
-		e.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		e.setRandomGenerator(new MyRandomStub(0.49));
 		
 		Assert.assertTrue(e.getSalud() == 100);
 		if (h.habilidadCasta3(e))

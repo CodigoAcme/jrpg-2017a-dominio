@@ -13,8 +13,8 @@ public class TestEnemigosExperiencia {
 		Humano h = new Humano("Nicolas", new Guerrero(), 1);
 		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, 0);
 		
-		h.setRandomGenerator(new MyRandomStub());
-		npc.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		npc.setRandomGenerator(new MyRandomStub(0.49));
 		
 		Personaje.cargarTablaNivel();
 		Assert.assertTrue(h.getExperiencia() == 0);
@@ -37,8 +37,8 @@ public class TestEnemigosExperiencia {
 		Humano h = new Humano("Nicolas", new Guerrero(), 1);
 		Humano h2 = new Humano("Lautaro", new Guerrero(), 2);
 		
-		h.setRandomGenerator(new MyRandomStub());
-		h2.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		h2.setRandomGenerator(new MyRandomStub(0.49));
 		
 		Personaje.cargarTablaNivel();
 		Assert.assertTrue(h.getExperiencia() == 0);

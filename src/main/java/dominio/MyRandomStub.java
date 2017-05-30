@@ -3,9 +3,11 @@ package dominio;
 
 public class MyRandomStub extends RandomGenerator {
 
-	private double valor = 0.49;
+	private double valor;
 
-	
+	public MyRandomStub(double valorFijo) {
+		this.valor = valorFijo;
+	}
 	@Override
 	public double nextDouble() {
 		return this.valor;
@@ -14,7 +16,22 @@ public class MyRandomStub extends RandomGenerator {
 	
 	@Override
 	public int nextInt(final int val) {
-		return val - 1;
+		return (int)this.valor;
 	}
 
 }
+
+
+//public class RandomGeneratorStub extends RandomGenerator {
+//
+//	private int valor;
+//
+//	public RandomGeneratorStub(int valorFijo) {
+//		this.valor = valorFijo;
+//	}
+//
+//	@Override
+//	public int obtenerAleatorioMenorQue(int maximo)  {
+//		return this.valor; // aqui esta el truco
+//	}
+//}

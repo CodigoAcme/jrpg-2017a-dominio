@@ -18,8 +18,8 @@ public class TestAsesino {
 		Humano h = new Humano("Nicolas",new Asesino(),1);
 		Humano h2 = new Humano("Lautaro",new Hechicero(),2);
 		
-		h.setRandomGenerator(new MyRandomStub());
-		h2.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		h2.setRandomGenerator(new MyRandomStub(0.49));
 		
 		Assert.assertEquals(105, h2.getSalud());
 		if	(h.habilidadCasta1(h2))

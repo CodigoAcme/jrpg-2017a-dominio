@@ -22,8 +22,8 @@ public class TestAliarCombatir {
 		Humano h = new Humano("Nicolas",new Guerrero(),1);
 		Humano h2 = new Humano("Lautaro",new Asesino(),1);
 		
-		h.setRandomGenerator(new MyRandomStub());
-		h2.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		h2.setRandomGenerator(new MyRandomStub(0.49));
 		
 		System.out.println(h2.getSalud());
 		Assert.assertTrue(h2.getSalud()==105);

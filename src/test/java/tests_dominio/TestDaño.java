@@ -15,8 +15,8 @@ public class TestDaño {
 		Humano h = new Humano("Nico", 100, 100, 100, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
 		Orco o = new Orco("Nico", 100, 100, 15, 0, 30, new Guerrero(0.2, 0, 1.5), 0, 1, 1);
 
-		h.setRandomGenerator(new MyRandomStub());
-		o.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		o.setRandomGenerator(new MyRandomStub(0.49));
 		
 		Assert.assertTrue(o.getSalud() == 100);
 		if (h.atacar(o) != 0) {
@@ -34,8 +34,8 @@ public class TestDaño {
 		Humano h = new Humano("Nico", 100, 100, 25, 0, 30, new Guerrero(0.2, 0, 1.5), 0, 1, 1);
 		Orco o = new Orco("Nico", 100, 100, 15, 0, 30, new Guerrero(0.2, 0, 1.5), 0, 1, 1);
 		
-		h.setRandomGenerator(new MyRandomStub());
-		o.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		o.setRandomGenerator(new MyRandomStub(0.49));
 		
 		h.atacar(o);
 		h.atacar(o);

@@ -17,8 +17,8 @@ public class TestOrco {
 		Humano h = new Humano("Nicolas", new Guerrero(), 1);
 		Orco o = new Orco("Hernan", new Guerrero(), 1);
 
-		h.setRandomGenerator(new MyRandomStub());
-		o.setRandomGenerator(new MyRandomStub());
+		h.setRandomGenerator(new MyRandomStub(0.49));
+		o.setRandomGenerator(new MyRandomStub(0.49));
 		
 		Assert.assertTrue(h.getSalud() == 105);
 		if (o.habilidadRaza1(h))
