@@ -10,22 +10,21 @@ import dominio.MyRandomStub;
 
 public class TestAsesino {
 
-	@Test
-	public void testRobar(){ }
-	
-	@Test
-	public void testCritico(){
-		Humano h = new Humano("Nicolas",new Asesino(),1);
-		Humano h2 = new Humano("Lautaro",new Hechicero(),2);
-		
-		h.setRandomGenerator(new MyRandomStub(0.49));
-		h2.setRandomGenerator(new MyRandomStub(0.49));
-		
-		Assert.assertEquals(105, h2.getSalud());
-		if	(h.habilidadCasta1(h2))
-			Assert.assertTrue(93==h2.getSalud());
-		else
-			Assert.assertEquals(105, h2.getSalud());
+  @Test
+  public void testRobar() { }
+  
+  @Test
+  public void testCritico() {
+    Humano h = new Humano("Nicolas",new Asesino(),1);
+    Humano h2 = new Humano("Lautaro",new Hechicero(),2);
+    h.setRandomGenerator(new MyRandomStub(0.49));
+    h2.setRandomGenerator(new MyRandomStub(0.49));
+    Assert.assertEquals(105, h2.getSalud());
+    if (h.habilidadCasta1(h2)) {
+      Assert.assertTrue(93 == h2.getSalud());
+    } else {
+      Assert.assertEquals(105, h2.getSalud());
+    }
 	}
 	
 	@Test
