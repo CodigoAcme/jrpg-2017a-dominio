@@ -25,7 +25,6 @@ public class TestAliarCombatir {
 		h.setRandomGenerator(new MyRandomStub(0.49));
 		h2.setRandomGenerator(new MyRandomStub(0.49));
 		
-		System.out.println(h2.getSalud());
 		Assert.assertTrue(h2.getSalud()==105);
 		if(	h.atacar(h2)!=0)
 			Assert.assertTrue(h2.getSalud()<105);

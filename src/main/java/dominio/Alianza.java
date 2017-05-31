@@ -1,13 +1,15 @@
 package dominio;
 
 import java.util.LinkedList;
-/**Clase Alianza. Se ocupa de formar un lista de aliados y 
- * se le asigna un nombre representavo
- */
+
+  /**Clase Alianza. Se ocupa de formar un lista de aliados y 
+  * se le asigna un nombre representavo
+  */
+
 public class Alianza {
 
-	private String nombre;
-	private LinkedList<Personaje> aliados;
+  private String nombre;
+  private LinkedList<Personaje> aliados;
 
 	public Alianza(String nombre) {
 		this.nombre = nombre;
@@ -17,7 +19,8 @@ public class Alianza {
 	 * Devuelve los aliados que forman parte de la alizana
 	 * */
 	public LinkedList<Personaje> getAliados() {
-	return this.copiaDeLista(aliados);
+//	return this.copiaDeLista(aliados);
+		return new LinkedList<Personaje>(aliados);
 //	return (LinkedList<Personaje>) aliados.clone();
 	}
 	/**M�todo obtenerNombre.
