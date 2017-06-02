@@ -25,16 +25,15 @@ public class TestAsesino {
     } else {
       Assert.assertEquals(105, h2.getSalud());
     }
-	}
-	
-	@Test
-	public void testProbEvasion(){
-		Humano h = new Humano("Nico",100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
-		
-		Assert.assertTrue(0.3==h.getCasta().getProbabilidadEvitarDaño());
-		h.habilidadCasta2(null);
-		Assert.assertEquals(0.45, h.getCasta().getProbabilidadEvitarDaño(), 0.01);
-		h.habilidadCasta2(null);
-		Assert.assertEquals(0.5, h.getCasta().getProbabilidadEvitarDaño(), 0.1);
-	}
+  }
+
+  @Test
+  public void testProbEvasion() {
+    Humano h = new Humano("Nico",100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
+    Assert.assertTrue(0.3 == h.getCasta().getProbabilidadEvitarDanio());
+    h.habilidadCasta2(null);
+    Assert.assertEquals(0.45, h.getCasta().getProbabilidadEvitarDanio(), 0.01);
+    h.habilidadCasta2(null);
+    Assert.assertEquals(0.5, h.getCasta().getProbabilidadEvitarDanio(), 0.1);
+  }
 }

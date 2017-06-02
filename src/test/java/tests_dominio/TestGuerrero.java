@@ -11,44 +11,45 @@ import dominio.MyRandomStub;
 
 public class TestGuerrero {
 
-	@Test
-	public void testDobleGolpe() {
-		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-		
-		h.setRandomGenerator(new MyRandomStub(0.49));
-		e.setRandomGenerator(new MyRandomStub(0.49));
-		
-		Assert.assertTrue(e.getSalud() == 100);
-		if (h.habilidadCasta1(e))
-			Assert.assertTrue(e.getSalud() < 100);
+  @Test
+  public void testDobleGolpe() {
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
-		else
-			Assert.assertTrue(e.getSalud() == 100);
-	}
+    h.setRandomGenerator(new MyRandomStub(0.49));
+    e.setRandomGenerator(new MyRandomStub(0.49));
 
-	@Test
-	public void testAutoDefensa() {
-		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
+    Assert.assertTrue(e.getSalud() == 100);
+    if (h.habilidadCasta1(e)) {
+      Assert.assertTrue(e.getSalud() < 100);
+    } else {
+      Assert.assertTrue(e.getSalud() == 100);
+    }
+  }
 
-		Assert.assertTrue(h.getDefensa() == 20);
-		h.habilidadCasta2(null);
-		Assert.assertTrue(h.getDefensa() == 65);
-	}
+  @Test
+  public void testAutoDefensa() {
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
 
-	@Test
-	public void testIgnoraDefensa() {
-		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Assert.assertTrue(h.getDefensa() == 20);
+    h.habilidadCasta2(null);
+    Assert.assertTrue(h.getDefensa() == 65);
+  }
 
-		h.setRandomGenerator(new MyRandomStub(0.49));
-		e.setRandomGenerator(new MyRandomStub(0.49));
-		
-		Assert.assertTrue(e.getSalud() == 100);
-		if (h.habilidadCasta3(e))
-			Assert.assertTrue(e.getSalud() < 100);
-		else
-			Assert.assertTrue(e.getSalud() == 100);
-	}
+  @Test
+  public void testIgnoraDefensa() {
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+
+    h.setRandomGenerator(new MyRandomStub(0.49));
+    e.setRandomGenerator(new MyRandomStub(0.49));
+
+    Assert.assertTrue(e.getSalud() == 100);
+    if (h.habilidadCasta3(e)) {
+      Assert.assertTrue(e.getSalud() < 100);
+    } else {
+      Assert.assertTrue(e.getSalud() == 100);
+    }
+  }
 
 }

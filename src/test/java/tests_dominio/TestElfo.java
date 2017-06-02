@@ -10,47 +10,48 @@ import dominio.MyRandomStub;
 
 public class TestElfo {
 
-	@Test
-	public void testGolpeLevel() {
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
+  @Test
+  public void testGolpeLevel() {
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
 
-		Assert.assertTrue(h.getSalud() == 100);
-		
-		h.setRandomGenerator(new MyRandomStub(0.49));
-		e.setRandomGenerator(new MyRandomStub(0.49));
-		
-		if (e.habilidadRaza1(h))
-			Assert.assertTrue(h.getSalud() < 100);
-		else
-			Assert.assertTrue(h.getSalud() == 100);
-	}
+    Assert.assertTrue(h.getSalud() == 100);
 
-	@Test
-	public void testAtaqueBosque() {
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
+    h.setRandomGenerator(new MyRandomStub(0.49));
+    e.setRandomGenerator(new MyRandomStub(0.49));
 
-		
-		h.setRandomGenerator(new MyRandomStub(0.49));
-		e.setRandomGenerator(new MyRandomStub(0.49));
-		
-		Assert.assertTrue(h.getSalud() == 100);
-		if (e.habilidadRaza2(h))
-			Assert.assertTrue(h.getSalud() < 100);
-		else
-			Assert.assertTrue(h.getSalud() == 100);
-	}
-	
-	@Test
-	public void puedeSerCurado() {
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-		Assert.assertTrue(e.puedeSerCurado());
-	}
-	
-	@Test
-	public void puedeSerAtacado() {
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-		Assert.assertTrue(e.serAtacado());
-	}
+    if (e.habilidadRaza1(h)) {
+      Assert.assertTrue(h.getSalud() < 100);
+    } else {
+      Assert.assertTrue(h.getSalud() == 100);
+    }
+  }
+
+  @Test
+  public void testAtaqueBosque() {
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
+
+
+    h.setRandomGenerator(new MyRandomStub(0.49));
+    e.setRandomGenerator(new MyRandomStub(0.49));
+    Assert.assertTrue(h.getSalud() == 100);
+    if (e.habilidadRaza2(h)) {
+      Assert.assertTrue(h.getSalud() < 100);
+    } else {
+      Assert.assertTrue(h.getSalud() == 100);
+    }
+  }
+
+  @Test
+  public void puedeSerCurado() {
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Assert.assertTrue(e.puedeSerCurado());
+  }
+
+  @Test
+  public void puedeSerAtacado() {
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Assert.assertTrue(e.serAtacado());
+  }
 }

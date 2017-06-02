@@ -21,10 +21,9 @@ public class Alianza {
  */
   
   public LinkedList<Personaje> getAliados() {
-    //return this.copiaDeLista(aliados);
     return new LinkedList<Personaje>(aliados);
-    //return (LinkedList<Personaje>) aliados.clone();
   }
+  
   /**M�todo obtenerNombre.
 *Retorna el nombre de nuestra alianza
 */
@@ -32,6 +31,7 @@ public class Alianza {
   public String obtenerNombre() {
     return nombre;
   }
+  
   /**M�todo eliminarPersonaje.
 * @param pj es el personaje que eliminaremos de nuestra Alianza.
 */
@@ -39,11 +39,12 @@ public class Alianza {
   public void eliminarPersonaje(Personaje pj) {
     aliados.remove(pj);
   }
+  
   /**Metodo añadirPersonaje.
 * @param pj es el personaje que se unir� a una Alianza.
 */
   
-  public void añadirPersonaje(Personaje pj) {
+  public void aniadirPersonaje(Personaje pj) {
     aliados.add(pj);
   }
   
@@ -52,11 +53,4 @@ public class Alianza {
 * @return copia de lista
 */
   
-  private LinkedList<Personaje> copiaDeLista(LinkedList<Personaje> lista) {
-    LinkedList<Personaje> listaAux = new LinkedList<>();
-    for (int i = 0 ;i < lista.size();i++) {
-      listaAux.add(lista.get(i));
-    }
-    return listaAux;
-  }
 }
