@@ -27,5 +27,7 @@ public interface Peleable {
   public String getNombre();
   
   public boolean puedeSerCurado();
+
+  void actualizarAtributosPorItem(Item item);
   
 }

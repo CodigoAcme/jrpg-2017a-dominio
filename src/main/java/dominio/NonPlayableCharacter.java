@@ -1,5 +1,7 @@
 package dominio;
 
+import java.util.Iterator;
+
 /**
  * Esta clase define a los NPC(personajes controlados por el programa) del juego, seteando segun su nivel de 
  * dificultad y nivel valores base a sus puntos de fuerza, salud y defensa.
@@ -220,5 +222,30 @@ public class NonPlayableCharacter extends PersonAbs implements Peleable {
   @Override
   public boolean puedeSerCurado() {
     return false;
+  }
+
+  @Override
+  public void actualizarAtributosPorItem(Item item) {   
+	String clave ;
+	Iterator<String> atributos = item.getValor().keySet().iterator();
+	
+	while(atributos.hasNext()) {  	
+	  clave = atributos.next();
+	  if(clave == "defensa") {
+	    modificarDefenza(item.getValor().get("defensa"));
+	    return;
+	  }
+	
+	  if(clave == "salud") {
+	    modificarSalud(item.getValor().get("salud"));
+	    return;
+	  }
+	
+	  if(clave == "fuerza") {
+	    modificarFuerza(item.getValor().get("fuerza"));
+	    return;
+      }	
+
+    }
   }
 }

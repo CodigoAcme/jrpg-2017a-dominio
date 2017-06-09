@@ -2,6 +2,7 @@ package dominio;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Clase que define los atributos que tienen en comun todas las clases de
@@ -730,11 +731,63 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
   }
 
   public void modificarEnergia(int energia) {
-    this.energia = this.energia + energia;
+    this.energia += energia;
   }
 
-  public void modificarDefenza(int defenza) {
-    this.defensa = this.defensa + defenza;
+  public void modificarMagia(int magia) {
+    this.magia += magia;
   }
 
+  public void modificarAtaque(int ataque) {
+    this.ataque += ataque;
+  }
+
+  public void modificarDestreza(int magia) {
+    this.destreza += destreza;
+  }
+
+  @Override
+  public void actualizarAtributosPorItem(Item item) {  
+	
+	String clave ;
+	Iterator<String> atributos = item.getValor().keySet().iterator();
+	
+	while(atributos.hasNext()) {  	
+	  clave = atributos.next();
+		if(clave == "defensa") {
+		  modificarDefenza(item.getValor().get("defensa"));
+		  return;
+		}
+		
+		if(clave == "salud") {
+		  modificarSalud(item.getValor().get("salud"));
+		  return;
+		}
+		
+		if(clave == "fuerza") {
+		  modificarFuerza(item.getValor().get("fuerza"));
+		  return;
+		}
+		
+		if(clave == "energia") {
+		  modificarEnergia(item.getValor().get("energia"));
+		  return;
+		}
+		
+		if(clave == "magia") {
+		  modificarMagia(item.getValor().get("magia"));
+		  return;
+		}
+		
+		if(clave == "ataque") {
+		  modificarAtaque(item.getValor().get("ataque"));
+		  return;
+		}
+		
+		if(clave == "destreza") {
+		  modificarDestreza(item.getValor().get("destreza"));
+		      return;
+		    }
+	 }
+  }
 }
