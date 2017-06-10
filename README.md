@@ -15,7 +15,6 @@
 
 * Flores, Cristian ([crisflores](https://github.com/crisflores))
 * Gutiérrez, Ruben ([rubennnn](https://github.com/rubennnn))
-* Iglesias, Pablo Ariel ([cerebroiglesias](https://github.com/cerebroiglesias))
 * Montenegro, Fernando ([fdmontenegro](https://github.com/fdmontenegro))
 
 ## Sobre la tecnología
