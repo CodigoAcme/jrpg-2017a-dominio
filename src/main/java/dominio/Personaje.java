@@ -441,7 +441,8 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
    */
   
   public int serAtacado(int danio) {
-    if (myRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDanio()) {
+	  
+//    if (this.myRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDanio()) {
       danio -= this.defensa;
       if (danio > 0) {
         if (salud <= danio) {
@@ -453,9 +454,11 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
         return danio;
       }
       return 0;
-    }
-    return 0;
+//    }
+//    return 0;
   }
+  
+
 
   /**
    * Define el estado del personaje, luego de que le roban salud. El nivel de
@@ -726,8 +729,8 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
   }
 
   public void actualizarValores(HashMap<String, Integer> atributos) { 
-    this.salud = atributos.get("salud" + this.getIdPersonaje());
-    this.energia = atributos.get("energia" + this.getIdPersonaje());
+    this.salud = atributos.get("salud");
+    this.energia = atributos.get("energia");
   }
 
   public void modificarEnergia(int energia) {

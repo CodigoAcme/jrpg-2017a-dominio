@@ -17,8 +17,8 @@ public abstract class PersonAbs {
     inventario = new ArrayList<Item>();
   }
 
-  public void setRandomGenerator(MyRandomStub myRandomStub) {
-    this.myRandom = myRandomStub;
+  public void setRandomGenerator(final RandomGenerator randomG) {
+    this.myRandom = randomG;
   }
 
   public RandomGenerator getMyRandom() {
