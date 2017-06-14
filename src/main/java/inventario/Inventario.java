@@ -1,20 +1,21 @@
 package inventario;
 import java.util.HashMap;
 
+
+
 public class Inventario {
 	private int idInv;
-	private HashMap<Integer,Item> items;
+	private HashMap<Integer,Item> inventario;
 
 	public Inventario() {
 		this.idInv = 0;
-		this.items = new HashMap<Integer,Item>();
+		this.inventario = new HashMap<Integer,Item>();
 	}
 	
 	
 	public Inventario(int idInv, HashMap<Integer,Item> items) {
-		super();
 		this.idInv = idInv;
-		this.items = items;
+		this.inventario = items;
 	}
 	
 	public int getIdInv() {
@@ -26,12 +27,12 @@ public class Inventario {
 	}
 
 	public HashMap<Integer,Item> getItems() {
-		return items;
+		return inventario;
 	}
 	
 	public boolean agregaItem(Item item) {
-		if (items.size() < 20) {
-			items.put(item.getIdItem(), item);
+		if (inventario.size() < 20) {
+			inventario.put(item.getIdItem(), item);
 			return true;
 		}
 		return false;
@@ -40,8 +41,6 @@ public class Inventario {
 	public Item obtenerItem(int idItem) {
 		return this.getItems().get(idItem);
 	}
-	
-	
 	
 
 }
