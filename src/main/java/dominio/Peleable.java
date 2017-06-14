@@ -28,6 +28,5 @@ public interface Peleable {
   
   public boolean puedeSerCurado();
 
-  void actualizarAtributosPorItem(Item item);
   
 }

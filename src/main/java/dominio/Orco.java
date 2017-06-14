@@ -1,5 +1,7 @@
 package dominio;
 
+import inventario.Inventario;
+
 /**
  * Define la raza Orco la cual tiene un aumento de salud de 10 puntos por ensima del personaje por defecto.
  * Sus habilidades son "Golpe Defensa" y "Modisco de Vida"
@@ -7,20 +9,20 @@ package dominio;
 
 public class Orco extends Personaje {
 
-  public Orco(String nombre, Casta casta , int id) {
-    super(nombre, casta, id);
-    nombreRaza = "Orco";
-    this.asignarHabilidadInicial("Orco");
-  }
+	  public Orco(String nombre, Casta casta , int id) {
+	    super(nombre, casta, id);
+	    nombreRaza = "Orco";
+	    this.asignarHabilidadInicial("Orco");
+	  }
 
-  public Orco(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,int experiencia, int nivel, int idPersonaje) {
-    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
-    nombreRaza = "Orco";
-
-    habilidadesRaza = new String[2];
-    habilidadesRaza[0] = "Golpe Defensa";
-    habilidadesRaza[1] = "Mordisco de Vida";
-  }
+	  public Orco(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,int experiencia, int nivel, int idPersonaje, final Inventario inventario) {
+	    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje, inventario);
+	   
+	    nombreRaza = "Orco";
+	    habilidadesRaza = new String[2];
+	    habilidadesRaza[0] = "Golpe Defensa";
+	    habilidadesRaza[1] = "Mordisco de Vida";
+	  }
 
   /**
   * Esta habilidad cuesta 10 de energia, en caso de tener suficiente energia para realizar la habilidad

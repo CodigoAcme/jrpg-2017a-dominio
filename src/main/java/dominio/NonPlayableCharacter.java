@@ -12,16 +12,15 @@ public class NonPlayableCharacter extends PersonAbs implements Peleable {
 
   private static final int dificultadAleatoria = -1;
 
+
   public NonPlayableCharacter(String nombre, int nivel, int dificultadNpc) {
-    super(nombre);
-    this.nivel = nivel;
+    super(nombre,nivel);
     int dificultad;
     if (dificultadNpc == dificultadAleatoria) {
       dificultad = this.myRandom.nextInt(3);
     } else {
       dificultad = dificultadNpc;
     }
-
     switch (dificultad) {
       case 0:
         this.fuerza = 10 + (nivel - 1) * 3;
@@ -224,28 +223,5 @@ public class NonPlayableCharacter extends PersonAbs implements Peleable {
     return false;
   }
 
-  @Override
-  public void actualizarAtributosPorItem(Item item) {   
-	String clave ;
-	Iterator<String> atributos = item.getValor().keySet().iterator();
-	
-	while(atributos.hasNext()) {  	
-	  clave = atributos.next();
-	  if(clave == "defensa") {
-	    modificarDefenza(item.getValor().get("defensa"));
-	    return;
-	  }
-	
-	  if(clave == "salud") {
-	    modificarSalud(item.getValor().get("salud"));
-	    return;
-	  }
-	
-	  if(clave == "fuerza") {
-	    modificarFuerza(item.getValor().get("fuerza"));
-	    return;
-      }	
-
-    }
-  }
+  
 }

@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import inventario.Inventario;
+import inventario.Item;
+
 /**
  * Clase que define los atributos que tienen en comun todas las clases de
  * personajes, todo lo que los define ya sea posicion, alianza, estadisticas,
@@ -65,13 +68,12 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
     }
   }
 
+  //personaje nuevo
   public Personaje(String nombre, Casta casta, int id) {
-    super(nombre);
+    super(nombre, 100, 10, 1);
     this.casta = casta;
     this.idPersonaje = id;
     experiencia = 0;
-    nivel = 1;
-    fuerza = 10;
     inteligencia = 10;
     destreza = 10;
 
@@ -92,9 +94,10 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 
   }
 
-  public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,int experiencia, int nivel, int idPersonaje) {
+  //persoanje existente
+  public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,int experiencia, int nivel, int idPersonaje, final Inventario inventario) {
 
-    super(nombre);
+    super(nombre, salud, fuerza, nivel, inventario);
     this.salud = salud;
     this.energia = energia;
     this.fuerza = fuerza;
@@ -748,49 +751,38 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
   public void modificarDestreza(int magia) {
     this.destreza += destreza;
   }
+  
+  public void aplicarBonusItem(Item item) {
+		this.ataque += item.getBonoAtaque();
+		this.defensa += item.getBonoDefensa();
+		this.magia += item.getBonoMagia();
+		this.saludTope += item.getBonoSalud();
+		this.salud += item.getBonoSalud();
+		this.energiaTope += item.getBonoEnergia();
+		this.energia += item.getBonoEnergia();
+	}
+	
+	public void quitarBonusItem(Item item) {
+		this.ataque -= item.getBonoAtaque();
+		this.defensa -= item.getBonoDefensa();
+		this.magia -= item.getBonoMagia();
+		this.saludTope -= item.getBonoSalud();
+		this.salud -= item.getBonoSalud();
+		this.energiaTope -= item.getBonoEnergia();
+		this.energia -= item.getBonoEnergia();
+	}
+	
+	public void equiparItemEnInventario(int idItem) {
+		Item item = this.inventario.obtenerItem(idItem);
+		item.serEquipado();
+		this.aplicarBonusItem(item);
+	}
+	
+	public void desequiparItemDeInventario(Item itemEquipado) {		
+		
+		itemEquipado.serDesequipado();
+		this.quitarBonusItem(itemEquipado);
+	}
 
-  @Override
-  public void actualizarAtributosPorItem(Item item) {  
-	
-	String clave ;
-	Iterator<String> atributos = item.getValor().keySet().iterator();
-	
-	while(atributos.hasNext()) {  	
-	  clave = atributos.next();
-		if(clave == "defensa") {
-		  modificarDefenza(item.getValor().get("defensa"));
-		  return;
-		}
-		
-		if(clave == "salud") {
-		  modificarSalud(item.getValor().get("salud"));
-		  return;
-		}
-		
-		if(clave == "fuerza") {
-		  modificarFuerza(item.getValor().get("fuerza"));
-		  return;
-		}
-		
-		if(clave == "energia") {
-		  modificarEnergia(item.getValor().get("energia"));
-		  return;
-		}
-		
-		if(clave == "magia") {
-		  modificarMagia(item.getValor().get("magia"));
-		  return;
-		}
-		
-		if(clave == "ataque") {
-		  modificarAtaque(item.getValor().get("ataque"));
-		  return;
-		}
-		
-		if(clave == "destreza") {
-		  modificarDestreza(item.getValor().get("destreza"));
-		      return;
-		    }
-	 }
-  }
+  
 }

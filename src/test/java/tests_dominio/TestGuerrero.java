@@ -8,13 +8,14 @@ import dominio.Elfo;
 import dominio.Guerrero;
 import dominio.Humano;
 import dominio.MyRandomStub;
+import inventario.Inventario;
 
 public class TestGuerrero {
 
   @Test
   public void testDobleGolpe() {
-    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
-    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1, new Inventario());
 
     h.setRandomGenerator(new MyRandomStub(0.49));
     e.setRandomGenerator(new MyRandomStub(0.49));
@@ -29,7 +30,7 @@ public class TestGuerrero {
 
   @Test
   public void testAutoDefensa() {
-    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());
 
     Assert.assertTrue(h.getDefensa() == 20);
     h.habilidadCasta2(null);
@@ -38,8 +39,8 @@ public class TestGuerrero {
 
   @Test
   public void testIgnoraDefensa() {
-    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
-    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1, new Inventario());
 
     h.setRandomGenerator(new MyRandomStub(0.49));
     e.setRandomGenerator(new MyRandomStub(0.49));

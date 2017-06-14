@@ -1,5 +1,7 @@
 package dominio;
 
+import inventario.Inventario;
+
 /**Clase Humano. El objetivo de la clase es crear
  * un personaje de raza Humano con sus respectivas habilidades
  */
@@ -13,13 +15,13 @@ public class Humano extends Personaje {
 
   }
 
-  public Humano(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,int experiencia, int nivel, int idPersonaje) {
-    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
-    nombreRaza = "Humano";
+  public Humano(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,int experiencia, int nivel, int idPersonaje, final Inventario inventario) {
+	    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje, inventario);
+	    nombreRaza = "Humano";
 
-    habilidadesRaza = new String[2];
-    habilidadesRaza[0] = "Incentivar";
-    habilidadesRaza[1] = "Golpe Fatal";
+	    habilidadesRaza = new String[2];
+	    habilidadesRaza[0] = "Incentivar";
+	    habilidadesRaza[1] = "Golpe Fatal";
   }
 
   /**

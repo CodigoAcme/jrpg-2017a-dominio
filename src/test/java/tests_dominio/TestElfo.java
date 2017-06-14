@@ -7,13 +7,14 @@ import dominio.Asesino;
 import dominio.Elfo;
 import dominio.Humano;
 import dominio.MyRandomStub;
+import inventario.Inventario;
 
 public class TestElfo {
 
   @Test
   public void testGolpeLevel() {
-    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1, new Inventario());
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());
 
     Assert.assertTrue(h.getSalud() == 100);
 
@@ -29,8 +30,8 @@ public class TestElfo {
 
   @Test
   public void testAtaqueBosque() {
-    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1, new Inventario());
+    Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());
 
 
     h.setRandomGenerator(new MyRandomStub(0.49));
@@ -45,13 +46,13 @@ public class TestElfo {
 
   @Test
   public void puedeSerCurado() {
-    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1, new Inventario());
     Assert.assertTrue(e.puedeSerCurado());
   }
 
   @Test
   public void puedeSerAtacado() {
-    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1, new Inventario());
     Assert.assertTrue(e.serAtacado());
   }
 }

@@ -1,5 +1,7 @@
 package dominio;
 
+import inventario.Inventario;
+
 /**Clase Elfo. El objetivo de la clase es crear.
  * un personaje de raza Elfo con sus respectivas habilidades
  */
@@ -13,15 +15,16 @@ public class Elfo extends Personaje {
   }
 
 
-  public Elfo(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,int experiencia,int nivel,int idPersonaje) {
-    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta,
-    experiencia, nivel, idPersonaje);
-    nombreRaza = "Elfo";
+ public Elfo(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,int experiencia,int nivel,int idPersonaje, final Inventario inventario) {
+	    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta,
+	    experiencia, nivel, idPersonaje, inventario);
+	    nombreRaza = "Elfo";
 
-    habilidadesRaza = new String[2];
-    habilidadesRaza[0] = "Golpe Level";
-    habilidadesRaza[1] = "Ataque Bosque";
+	    habilidadesRaza = new String[2];
+	    habilidadesRaza[0] = "Golpe Level";
+	    habilidadesRaza[1] = "Ataque Bosque";
   }
+
 
 
   /**Metodo habilidadRaza1.

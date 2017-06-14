@@ -8,13 +8,14 @@ import dominio.Elfo;
 import dominio.Hechicero;
 import dominio.Humano;
 import dominio.MyRandomStub;
+import inventario.Inventario;
 
 public class TestHumano {
 
   @Test
   public void testIncentivar() {
-    Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
-    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1, new Inventario());
 
     Assert.assertTrue(e.getAtaque() == 37);
     h.habilidadRaza1(e);
@@ -23,8 +24,8 @@ public class TestHumano {
 
   @Test
   public void testGolpeFatal() {
-    Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
-    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+    Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());
+    Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1, new Inventario());
 
     h.setRandomGenerator(new MyRandomStub(0.49));
     e.setRandomGenerator(new MyRandomStub(0.49));
@@ -42,13 +43,13 @@ public class TestHumano {
 
   @Test
   public void puedeSerCurado() {
-    Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);  
+    Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());  
     Assert.assertTrue(h.puedeSerCurado());
   }
 
   @Test
   public void puedeSerAtacado() {
-    Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
+    Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1, new Inventario());
     Assert.assertTrue(h.serAtacado());
   }
 }
