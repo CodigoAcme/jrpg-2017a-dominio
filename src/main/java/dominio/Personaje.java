@@ -783,6 +783,13 @@ public abstract class Personaje extends PersonAbs implements Peleable, Serializa
 		itemEquipado.serDesequipado();
 		this.quitarBonusItem(itemEquipado);
 	}
-
+	
+	public void ganarItem(){
+		MyRandom rand = new MyRandom();
+		int aleatorio= rand.nextInt(5);
+		if (this.inventario.getItems().size() < 20) {
+			this.inventario.getItems().put(aleatorio, this.inventario.obtenerItem(aleatorio));
+		}
+	}
   
 }
