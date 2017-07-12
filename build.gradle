@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
-
 apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
 apply plugin: 'jacoco'
@@ -37,9 +36,13 @@ dependencies {
 }*/
 
 // Tareas
-
+ext{
+	checkstyleVersion = '6.16.1'
+}
 checkstyle {
-	configFile = new File(rootDir, "src/test/resources/sun_checks.xml")
+	toolVersion = checkstyleVersion
+	config = rootProject.resources.text.fromFile('etc/checkstyle/rules.xml')
+	//configFile = new File(rootDir, "src/test/resources/sun_checks.xml")
 	ignoreFailures = true
 }
 
@@ -83,7 +86,6 @@ task pmd (dependsOn: compileJava) << {
 findbugs {
     ignoreFailures = true
 }
-
 
 jacocoTestReport {
     reports {
